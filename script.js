@@ -1,5 +1,5 @@
 // === CONFIG ===
-const OPENROUTER_API_KEY = 'YOUR_OPENROUTER_API_KEY';
+const OPENROUTER_API_KEY = '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';
 const SITE_URL = 'https://your-site.com';
 const SITE_TITLE = 'Fitness Planner App';
 
@@ -47,7 +47,7 @@ async function generatePlan() {
     const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method: 'POST',
       headers: {
-        'Authorization': `Bearer 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`,
+        'Authorization': `Bearer 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`,
         'HTTP-Referer': SITE_URL,
         'X-Title': SITE_TITLE,
         'Content-Type': 'application/json'
@@ -133,7 +133,7 @@ async function sendChatMessage() {
     const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
       method:'POST',
       headers:{
-        'Authorization':`Bearer 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`,
+        'Authorization':`Bearer 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`,
         'HTTP-Referer':SITE_URL,
         'X-Title':SITE_TITLE,
         'Content-Type':'application/json'
