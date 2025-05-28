@@ -1,0 +1,125 @@
+/* ===== Global & Original Styles ===== */
+body {
+  background: #f8f9fa;
+}
+.header {
+  background: #343a40;
+  color: #fff;
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+.card-custom {
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+.muscle-group label {
+  cursor: pointer;
+}
+.btn-custom {
+  background: #28a745;
+  color: #fff;
+  border: none;
+}
+.btn-custom:hover {
+  background: #218838;
+}
+#plan,
+#charts,
+#chat-section {
+  margin-top: 2rem;
+}
+#history .card {
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+#chat-messages {
+  max-height: 300px;
+  overflow-y: auto;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background: #fff;
+}
+.chat-message {
+  margin-bottom: 0.75rem;
+}
+.chat-message.user {
+  text-align: right;
+}
+.chat-message.user .message {
+  display: inline-block;
+  background: #d1e7dd;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+.chat-message.bot .message {
+  display: inline-block;
+  background: #e2e3e5;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+}
+
+/* ===== Playground Styles for Plan Content ===== */
+.playground {
+  font-family: "Times New Roman", serif;
+  background: #fffcee;
+  border: 1px solid #f0e6b8;
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  line-height: 1.6;
+}
+.playground h2,
+.playground h3,
+.playground h4 {
+  font-family: "Times New Roman", serif;
+}
+.playground strong {
+  color: #333;
+}
+.playground p,
+.playground li {
+  margin: 0.5rem 0;
+}
+
+/* ===== Iconic diet styles (unchanged) ===== */
+.diet-icons {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #fff;
+  border-radius: 0.75rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.diet-icons h5 {
+  font-size: 1.25rem;
+  margin-bottom: 0.75rem;
+}
+.diet-icons p {
+  font-size: 1rem;
+  margin: 0.25rem 0;
+}
+.diet-icons i {
+  width: 1.25rem;
+  text-align: center;
+  margin-right: 0.5rem;
+  color: #28a745;
+}
+
+/* ===== Aurora Background Styles ===== */
+
+/* Aurora */
+.bg-container {
+  position:fixed; top:0; left:0; width:100%; height:100%;
+  background:
+    radial-gradient(ellipse at 20% 30%, rgba(138,43,226,0.8) 0%, rgba(138,43,226,0) 60%),
+    radial-gradient(ellipse at 80% 50%, rgba(0,191,255,0.7) 0%, rgba(0,191,255,0) 70%),
+    radial-gradient(ellipse at 50% 80%, rgba(50,205,50,0.6) 0%, rgba(50,205,50,0) 65%),
+    linear-gradient(135deg, #000 0%, #0a0520 100%);
+  blend-mode:overlay,screen,hard-light;
+  animation: aurora-drift 25s infinite alternate ease-in-out;
+  z-index:-1;
+}
+@keyframes aurora-drift {
+  0%   { filter: hue-rotate(0deg) brightness(1); }
+  50%  { filter: hue-rotate(30deg) brightness(1.2); }
+  100% { filter: hue-rotate(60deg) brightness(1); }
+}

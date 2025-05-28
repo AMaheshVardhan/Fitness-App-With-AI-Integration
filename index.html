@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fitness Planner App</title>
+  <!-- Bootstrap CSS -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.6.0/css/bootstrap.min.css"
+  />
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
+  <!-- Your custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Aurora Background -->
+  <div class="bg-container"></div>
+
+  <!-- Header -->
+  <header class="header text-center">
+    <h1><i class="fa-solid fa-dumbbell"></i> AI-Powered Fitness Planner</h1>
+  </header>
+
+  <div class="container">
+    <div class="row">
+      <!-- Input Card -->
+      <div class="col-lg-4 mb-4">
+        <div class="card card-custom p-4 bg-white">
+          <h4 class="card-title mb-3">
+            <i class="fa-solid fa-list-check"></i> Your Details
+          </h4>
+
+          <!-- Muscle Groups -->
+          <div class="row muscle-group mb-3">
+            <div class="col-6 mb-2">
+              <label class="d-block"><input type="checkbox" value="Chest" /> Chest</label>
+            </div>
+            <div class="col-6 mb-2">
+              <label class="d-block"><input type="checkbox" value="Back" /> Back</label>
+            </div>
+            <div class="col-6 mb-2">
+              <label class="d-block"><input type="checkbox" value="Legs" /> Legs</label>
+            </div>
+            <div class="col-6 mb-2">
+              <label class="d-block"><input type="checkbox" value="Arms" /> Arms</label>
+            </div>
+            <div class="col-6 mb-2">
+              <label class="d-block"><input type="checkbox" value="Shoulders" /> Shoulders</label>
+            </div>
+            <div class="col-6 mb-2">
+              <label class="d-block"><input type="checkbox" value="Abs" /> Abs</label>
+            </div>
+          </div>
+
+          <!-- Injuries -->
+          <div class="form-group mb-3">
+            <label for="injuries"><i class="fa-solid fa-heart-pulse"></i> Previous Injuries</label>
+            <textarea
+              id="injuries"
+              class="form-control"
+              rows="2"
+              placeholder="E.g., left ankle sprain, lower back pain, etc."></textarea>
+          </div>
+
+          <!-- Diet Preference -->
+          <div class="form-group mb-3">
+            <label for="diet-pref"><i class="fa-solid fa-carrot"></i> Diet Preference</label>
+            <select id="diet-pref" class="form-control">
+              <option value="Non-Vegetarian">Non-Vegetarian</option>
+              <option value="Vegetarian">Vegetarian</option>
+              <option value="Vegan">Vegan</option>
+            </select>
+          </div>
+
+          <button id="generate-btn" class="btn btn-custom btn-block">
+            <i class="fa-solid fa-robot"></i> Generate Plan
+          </button>
+        </div>
+      </div>
+
+      <!-- Output & Charts -->
+      <div class="col-lg-8">
+        <div id="plan" class="card card-custom p-4 bg-white d-none">
+          <h4 class="card-title">
+            <i class="fa-solid fa-paper-plane"></i> Your Workout & Diet Plan
+          </h4>
+          <div id="plan-content" class="playground mt-3"></div>
+        </div>
+
+        <div id="charts" class="row d-none">
+          <div class="col-md-6">
+            <div class="card card-custom p-3 bg-white">
+              <h5 class="card-title">
+                <i class="fa-solid fa-pie-chart"></i> Diet Breakdown
+              </h5>
+              <canvas id="dietChart"></canvas>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <div class="card card-custom p-3 bg-white">
+              <h5 class="card-title">
+                <i class="fa-solid fa-chart-bar"></i> Weekly Progress
+              </h5>
+              <canvas id="progressChart"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div id="chat-section" class="card card-custom p-4 bg-white d-none">
+          <h5 class="card-title">
+            <i class="fa-solid fa-comments"></i> Ask About This Plan
+          </h5>
+          <div id="chat-messages"></div>
+          <div class="input-group mt-3">
+            <input
+              type="text"
+              id="chat-input"
+              class="form-control"
+              placeholder="Type your question..."
+            />
+            <div class="input-group-append">
+              <button id="chat-send" class="btn btn-custom">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="row">
+      <div class="col-12">
+        <h4 class="mb-3">
+          <i class="fa-solid fa-clock-rotate-left"></i> Saved Plans
+        </h4>
+        <div id="history" class="row"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dependencies -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Your custom JS -->
+  <script src="script.js"></script>
+</body>
+</html>
